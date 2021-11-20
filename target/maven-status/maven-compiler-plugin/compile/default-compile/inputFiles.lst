@@ -4,13 +4,17 @@
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/entity/Usuario.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/entity/Dono.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/security/SecurityConfig.java
+/home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/controller/ViewUA.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/security/Login.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/service/Service01Impl.java
+/home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/entity/Autorizacao.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/repository/ConsultaRepository.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/controller/AnimalController.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/repository/UsuarioRepository.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/security/JwtAuthenticationFilter.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/service/SegurancaServiceImpl.java
+/home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/controller/UsuarioController.java
+/home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/repository/AutorizacaoRepository.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/entity/Consulta.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/entity/Animal.java
 /home/linus/Documents/GitHub/LabVmineda10/src/main/java/br/gov/sp/fatec/veterinario/controller/View.java

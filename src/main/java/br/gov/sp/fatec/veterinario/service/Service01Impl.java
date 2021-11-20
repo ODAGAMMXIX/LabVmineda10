@@ -1,9 +1,12 @@
 package br.gov.sp.fatec.veterinario.service;
 import java.util.HashSet;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import br.gov.sp.fatec.veterinario.entity.Animal;
 import br.gov.sp.fatec.veterinario.entity.Dono;
 import br.gov.sp.fatec.veterinario.repository.AnimalRepository;
@@ -18,6 +21,7 @@ public class Service01Impl implements Service01 {
     @Autowired
     DonoRepository donoRepository;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Transactional
     public Animal novoAnimal(
         String nomeAnimal,  
@@ -46,7 +50,8 @@ public class Service01Impl implements Service01 {
         return animal;
 
     }
-
+    @Override
+    @PreAuthorize("hasAnyRole('ADMIN','USUARIO')")
     public List <Animal> buscarTodosAnimais() {
         return animalRepository.findAll();
     }  

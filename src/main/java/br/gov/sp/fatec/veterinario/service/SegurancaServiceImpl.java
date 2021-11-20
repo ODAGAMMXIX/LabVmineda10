@@ -3,6 +3,7 @@ package br.gov.sp.fatec.veterinario.service;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,14 +14,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import br.gov.sp.fatec.veterinario.entity.Autorizacao;
 import br.gov.sp.fatec.veterinario.entity.Usuario;
 import br.gov.sp.fatec.veterinario.repository.AutorizacaoRepository;
 import br.gov.sp.fatec.veterinario.repository.UsuarioRepository;
 
-
-@Service("segurancaService")
-
+@Service ("segurancaService")
 public class SegurancaServiceImpl implements SegurancaService {
 
     @Autowired
@@ -29,12 +29,7 @@ public class SegurancaServiceImpl implements SegurancaService {
     @Autowired
     AutorizacaoRepository autorizacaoRepo;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
-
-
     @Override //adicionado pelo Mineda 12/nov
-    @PreAuthorize("hasRole('ADMIN')")
     @Transactional
     public Usuario novoUsuario(String nome, String email, String senha, String autorizacao) {
         
@@ -48,7 +43,7 @@ public class SegurancaServiceImpl implements SegurancaService {
         Usuario usuario = new Usuario();
         usuario.setNome(nome);
         usuario.setEmail(email);
-        usuario.setSenha(passwordEncoder.encode(senha));
+        usuario.setSenha(senha);
         usuario.setAutorizacoes(new HashSet<Autorizacao>());
         usuario.getAutorizacoes().add(aut);
         usuarioRepo.save(usuario);
@@ -57,7 +52,6 @@ public class SegurancaServiceImpl implements SegurancaService {
     }
 
     @Override //adicionado pelo Mineda 12/nov
-    @PreAuthorize("hasAnyRole('ADMIN','USUARIO')")
     public List<Usuario> buscarTodosUsuarios() {
         return usuarioRepo.findAll();
     }
@@ -74,5 +68,5 @@ public class SegurancaServiceImpl implements SegurancaService {
                 .toArray(new String[usuario.getAutorizacoes().size()]))
          .build();
   }
-        
+    
 }

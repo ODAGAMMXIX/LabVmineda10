@@ -5,7 +5,7 @@ import br.gov.sp.fatec.veterinario.entity.Animal;
 
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
 
-    public Animal findByNome (String Nome);
+    public List <Animal> findByNome (String Nome);
 
     public List <Animal> findByNomeContainsOrEspecieContains (String nome, String especie);
 

@@ -8,7 +8,6 @@ import br.gov.sp.fatec.veterinario.entity.Usuario;
 
 //IT SERVICES FRONTEND/API ETC.
 
-
 public interface SegurancaService extends UserDetailsService{
 
     public Usuario novoUsuario(String nome, String email, String senha, String autorizacao);
